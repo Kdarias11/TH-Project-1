@@ -117,7 +117,7 @@ function printQuote() {
   // to the HTML string
   
   if (currentQuote.citation) {
-    sourceParagraph += "<span class='citation'>" + currentQuote.citation + "</span>"
+    sourceParagraph += "<span class='citation'>" + currentQuote.citation + "</span>";
   }
 
 
@@ -128,7 +128,7 @@ function printQuote() {
 if (currentQuote.year)  {
   sourceParagraph += "<span class='year'>" + currentQuote.year + "</span>";
 
-}
+ }
 
   // 5. After the two if statements, concatenate the closing </p> 
   // tag to the HTML string

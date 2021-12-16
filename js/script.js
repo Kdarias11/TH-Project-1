@@ -135,7 +135,7 @@ if (currentQuote.year)  {
   sourceParagraph += "</p>"
   // 6. set the innerHTML of the quote-box div to equal the 
   // complete HTML string
-  document.getElementById("quote-box").innerHTML = quoteParagraph + sourceParagraph;
+  document.getElementById('quote-box').innerHTML = quoteParagraph + sourceParagraph;
 }
 
 

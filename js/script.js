@@ -11,7 +11,7 @@ project 1 - A Random Quote Generator
  * `quotes` array 
 ***/
 
-const quotes = [
+var quotes = [
   {  
     quote:'Live as if you were to die tomorrow. Learn as if you were to live forever',
     source:'-Mahatma Gandi',
@@ -50,7 +50,7 @@ const quotes = [
     quote:'Do not let what you cannot do interfere with what you can do.',
     source:'-John Wooden',
     citation:'',
-    citation:'',
+    year:'',
 
   },
   {
@@ -87,16 +87,58 @@ const quotes = [
 /***
  * `getRandomQuote` function
 ***/
+//Generates a random number
 
 function getRandomQuote() {
-  var randomNumber = Math.floor(Math.random() * (quotes.length))
-  return quotes[quoteNumber];
+  let randomQuote = Math.floor(Math.random() * quotes.length);
+  return quotes[randomQuote];
   
 }
 
-/***
- * `printQuote` function
-***/
+
+
+
+
+
+
+function printQuote() {
+  // 1. Create a variable that calls the getRandomQuote() 
+  // function
+  let currentQuote = getRandomQuote();
+  // 2. Create a variable that initiates your HTML string with 
+  // the first two <p></p> elements, their classNames, 
+  // and the quote and source properties, but leave off 
+  // the second closing `</p>` tag for now
+  let quoteParagraph = "<p class='quote'>"  + currentQuote.quote + "</p>"
+  let sourceParagraph = "<p class='source'>" + currentQuote.source;
+  // 3. Use an if statement to check if the citation property 
+  // exists, and if it does, concatenate a <span></span> 
+  // element, appropriate className, and citation property 
+  // to the HTML string
+  
+  if (currentQuote.citation) {
+    sourceParagraph += "<span class='citation'>" + currentQuote.citation + "</span>"
+  }
+
+
+  // 4. Use an if statement to check of the year property exists, 
+  // and if it does, concatenate a <span></span> element, 
+  // appropriate className, and year property to the HTML 
+  //string
+if (currentQuote.year)  {
+  sourceParagraph += "<span class='year'>" + currentQuote.date + "</span>";
+
+}
+
+  // 5. After the two if statements, concatenate the closing </p> 
+  // tag to the HTML string
+  sourceParagraph += "</p>"
+  // 6. set the innerHTML of the quote-box div to equal the 
+  // complete HTML string
+  document.getElementById("qoute-box").innerHTML = quoteParagraph + sourceParagraph;
+}
+printQuote();
+
 
 
 
